@@ -24,5 +24,57 @@ Okay, you're on the right track with tone and brevity. This is good advice, than
 
 I should also clarify that I am using Nix Flakes, and the Determinate Nix (3.6.2), which is compatible with nix 2.29.0. Please use the API of the newer experimental nix-command flakes when outputting instructions for NixOS.
 
+## Round 3
 
+This is my current environment setup. Ignore the top-level description, it's just a placeholder.
 
+```nix
+{
+    description = "Base configuration using flake to manage NixOS";
+
+    # Inputs
+    # https://nixos.org/manual/nix/unstable/command-ref/new-cli/nix3-flake.html#flake-inputs
+    inputs = {
+        #############################
+        # NixOS-related inputs
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
+
+    };
+
+    outputs =
+        inputs@{ self
+        # NixOS-related
+        , nixpkgs
+        , nixpkgs-unstable
+        , nixpkgs-stable
+        , ...
+        }:
+        let
+            system = "x86_64-linux";
+            nixpkgs-options = {
+                inherit system;
+
+                config = {
+                    allowUnfree = true;
+                    cudaSupport = true;
+                };
+            };
+
+            pkgs = import nixpkgs nixpkgs-options;
+            pkgs-unstable = import nixpkgs-unstable nixpkgs-options;
+            pkgs-stable = import nixpkgs-stable nixpkgs-options;
+
+            lib = pkgs.lib;
+
+        in
+            {
+            devShells.${system}.default = pkgs.mkShell {
+                packages = [
+                    pkgs.audacity
+                ];
+            };
+        };
+}
+```
