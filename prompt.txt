@@ -1,0 +1,28 @@
+## Round 1
+
+<ENVIRONMENT>
+I have no music production experience, but I am a skilled computer scientist who can do anything in pretty much any programming language. I am running NixOS 25.11, and I have access to good compute through my desktop I can ssh into. The dsektop is has an AMD Ryzen 9 7950X3D 16 core CPU and a NVIDIA RTX 4090 GPU.
+
+My laptop is running NixOS as well, on an AMD Ryzen 5900HS 8 core CPU and an NVIDIA 3060 GPU, but I have to explicitly activate the discrete GPU (dGPU), and most of the time it is off, and I'm using the integrated graphics (iGPU) instead of the Ryzen Vega chip instead.
+</ENVIRONMENT>
+
+<CONTEXT>
+I want to create audio samples for use in a game, and I am using Godot Engine. Based on the docs, I think that an MP3 file format would be best. So I would like an open-source, free, and easy-to-use audio recording and sampling software to create sound effects for the game, that can output to MP3 file format.
+</CONTEXT>
+
+<RESOURCES>
+Godot Engine docs about importing audio samples can be found here:
+https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_audio_samples.html
+
+This is a list of commonly used audio software on Linux:
+https://en.wikipedia.org/wiki/List_of_Linux_audio_software#Audio_editors_and_recorders
+</RESOURCES>
+
+## Round 2
+
+Okay, you're on the right track with tone and brevity. This is good advice, thank you.
+
+I should also clarify that I am using Nix Flakes, and the Determinate Nix (3.6.2), which is compatible with nix 2.29.0. Please use the API of the newer experimental nix-command flakes when outputting instructions for NixOS.
+
+
+
