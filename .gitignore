@@ -1,2 +1,5 @@
 # Nix stuff
 .direnv/
+
+# Audacity project files
+*.aup3
