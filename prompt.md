@@ -18,11 +18,13 @@ This is a list of commonly used audio software on Linux:
 https://en.wikipedia.org/wiki/List_of_Linux_audio_software#Audio_editors_and_recorders
 </RESOURCES>
 
+
 ## Round 2
 
 Okay, you're on the right track with tone and brevity. This is good advice, thank you.
 
 I should also clarify that I am using Nix Flakes, and the Determinate Nix (3.6.2), which is compatible with nix 2.29.0. Please use the API of the newer experimental nix-command flakes when outputting instructions for NixOS.
+
 
 ## Round 3
 
@@ -78,3 +80,24 @@ This is my current environment setup. Ignore the top-level description, it's jus
         };
 }
 ```
+
+
+## Round 4
+
+<INSTRUCTION>
+Let's ignore installing things system-wide for now, unless necessary.
+</INSTRUCTION>
+<TASK>
+I think my Samsung S23 android phone has a better mic than my ASUS Flow X13 laptop.
+I don't want to pull any sound effects from the Internet. I want to produce them myself, as a Foley artist would.
+
+I think I want to use my phone for recording live samples, then moving them to my laptop and processing them there.
+
+Is there any particular recording application I should use?
+</TASK>
+
+
+## Round 5
+
+Okay, I've recorded a few tracks now. I want to extract individual samples out of each track, saving them each to a single file. How can I do this in Audacity?
+
